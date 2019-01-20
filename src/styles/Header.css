@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  height: 75px;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #FFF;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  transition: height .2s ease-in-out;
+}
+
+.sub-nav {
+  display: flex;
+  align-items: center;
+}
+
+.sub-nav .notifications {
+  margin: 0px 50px 0px 50px;
+}

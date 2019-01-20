@@ -1,0 +1,50 @@
+type User {
+  id: ID! @unique
+  fullName: String!
+  username: String!
+  bio: String
+  email: String!
+  password: String!
+  userImage: String
+  following:  [User!]! @relation(name: "FollowRelation")
+  followers: [User!]! @relation(name: "FollowRelation")
+  likes: [Like!]!
+  bookmarks: [Bookmark!]!
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID! @unique
+  createdAt: DateTime!
+  author: User!
+  postImage: String
+  description: String!
+  comments: [Comment!]!
+  likes: [Like!]!
+}
+
+type Like {
+  id: ID! @unique
+  createdAt: DateTime!
+  liker: User!
+  post: Post
+  comment: Comment
+}
+
+type Comment {
+  id: ID! @unique
+  createdAt: DateTime!
+  text: String!
+  author: User!
+  likes: [Like!]!
+  post: Post!
+}
+
+type Bookmark {
+  id: ID! @unique
+  post: Post!
+  bookmarkedBy: User!
+}
+
+# authentication/login/signup, subscriptions, pagnation on scroll
+# explore (posts by users not following)

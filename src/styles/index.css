@@ -16,6 +16,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #231f20;
+}
+
+a {
+  text-decoration: none;
+  color: #231f20;
 }
 
 code {
