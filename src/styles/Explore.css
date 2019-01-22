@@ -1,0 +1,20 @@
+.explore {
+  padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explore > * {
+  width: 950px;
+}
+
+.explore--header {
+  text-align: left;
+  margin: 0px 0px 15px 15px;
+}
+
+.explore--posts {
+  display: flex;
+  flex-wrap: wrap;
+}

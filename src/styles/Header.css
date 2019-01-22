@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
-  height: 75px;
+  position: fixed;
+  height: 50px;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -12,11 +12,19 @@
   transition: height .2s ease-in-out;
 }
 
+.search {
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+    outline: 0;
+    padding: 3px 10px 3px 26px;
+}
+
 .sub-nav {
   display: flex;
   align-items: center;
 }
 
 .sub-nav .notifications {
-  margin: 0px 50px 0px 50px;
+  margin: 0px 30px 0px 30px;
 }

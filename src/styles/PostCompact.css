@@ -1,0 +1,8 @@
+.post-compact {
+  /* flex: calc(33% - 20px); */
+  width: 275px;
+  height: 275px;
+  max-width: 275x;
+  max-height: 275px;
+  margin: 10px;
+}

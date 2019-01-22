@@ -629,6 +629,8 @@ export type PostWhereUniqueInput = AtLeastOne<{
 
 export type UserWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
+  username?: String;
+  email?: String;
 }>;
 
 export interface BookmarkCreateInput {

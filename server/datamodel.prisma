@@ -1,9 +1,9 @@
 type User {
   id: ID! @unique
   fullName: String!
-  username: String!
+  username: String! @unique
   bio: String
-  email: String!
+  email: String! @unique
   password: String!
   userImage: String
   following:  [User!]! @relation(name: "FollowRelation")
@@ -45,6 +45,3 @@ type Bookmark {
   post: Post!
   bookmarkedBy: User!
 }
-
-# authentication/login/signup, subscriptions, pagnation on scroll
-# explore (posts by users not following)

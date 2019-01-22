@@ -1,13 +1,20 @@
-# import * from './generated/graphql-schema/prisma.graphql'
+# import * from './generated/graphql-prisma/prisma.graphql'
+
+type AuthPayload {
+  token: String
+  user: User
+}
 
 type Query {
   users: [User!]!
   posts: [Post!]!
+  user(username: String!): User
+  me: User
 }
 
 type Mutation {
-    createUser(firstName: String!,lastName: String!, email: String!, password: String!): User
+    signup(fullName: String!, username: String! email: String!, password: String!): AuthPayload
+    login(email: String!, password: String!): AuthPayload
     deleteUser: User
     createPost: Post
-    
 }
