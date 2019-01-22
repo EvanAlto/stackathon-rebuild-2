@@ -17,7 +17,9 @@ const Query = {
     const userId = getUserId(context)
     return await context.prisma.posts({where: {
       id_not: userId
-    }})
+    },
+    orderBy: args.orderBy
+  })
   }
 }
 

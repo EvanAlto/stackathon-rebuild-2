@@ -5,8 +5,8 @@ import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const EXPLORE_QUERY = gql`
-  query{
-    posts {
+  query {
+    posts (orderBy: createdAt_DESC){
       id
       postImage
       description

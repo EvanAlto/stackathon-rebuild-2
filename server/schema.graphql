@@ -7,7 +7,7 @@ type AuthPayload {
 
 type Query {
   users: [User!]!
-  posts: [Post!]!
+  posts(orderBy: PostOrderByInput): [Post!]!
   user(username: String!): User
   me: User
 }
