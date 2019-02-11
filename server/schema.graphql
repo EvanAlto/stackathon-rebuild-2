@@ -18,3 +18,7 @@ type Mutation {
     deleteUser: User
     createPost: Post
 }
+
+type Subscription {
+  newPost: Post
+}
