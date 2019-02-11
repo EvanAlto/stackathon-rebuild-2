@@ -1,5 +1,5 @@
 endpoint: https://us1.prisma.sh/evan-alto-c8eeb6/prisma/dev
-datamodel: './server/datamodel.prisma'
+datamodel: ./server/datamodel.prisma
 
 generate:
   - generator: javascript-client

@@ -6,10 +6,14 @@ import { Query } from 'react-apollo'
 
 const HOME_QUERY = gql`
   query{
-    posts {
+    posts (orderBy: createdAt_DESC) {
       id
       postImage
       description
+      author {
+        username
+        userImage
+      }
     }
   }
 `
@@ -21,7 +25,7 @@ export default class Home extends Component {
       <Query query={HOME_QUERY}>
         {({loading, error, data}) => {
           if (loading) return <div>Loading...</div>
-          return data.posts.map(post => <Post {...post}/>)
+          return data.posts.map(post => <Post key={post.id} post={post}/>)
         }}
       </Query>
       </div>

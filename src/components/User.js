@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import '../styles/User.css'
-// import { PostCompact } from './'
 import { AUTH_TOKEN } from '../constants'
 import gql from 'graphql-tag'
-import { PageNotFound } from './'
+import { PageNotFound, PostCompact } from './'
 import { Query } from 'react-apollo'
 import { FaInstagram } from 'react-icons/fa'
 
@@ -14,6 +13,10 @@ const USER_QUERY = gql`
       username
       fullName
       userImage
+      posts {
+        id
+        postImage
+      }
     }
   }
 `
@@ -32,7 +35,7 @@ export default class User extends Component {
       {({loading, error, data}) => {
         if (loading) return <FaInstagram className="flex-center" size={"3rem"} />
         if (!data) return <PageNotFound />
-        const {fullName, username, userImage} = data.user
+        const {fullName, username, userImage, posts} = data.user
         return (
           <div className="user-profile">
             <div className="user-profile--details">
@@ -56,6 +59,9 @@ export default class User extends Component {
               </div>
             </div>
             <div className="user-profile--posts">
+                  {
+                    posts.map(post => <PostCompact key={post.id} {...post} />)
+                  }
             </div>
           </div>
         )

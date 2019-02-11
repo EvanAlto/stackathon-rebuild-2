@@ -26,7 +26,7 @@ export default class Explore extends Component {
                 <div className="explore--posts">
                 {
                   data.posts.map(post => {
-                    return <PostCompact {...post} />
+                    return <PostCompact key={post.id} {...post} />
                   })
                 }
                 </div>

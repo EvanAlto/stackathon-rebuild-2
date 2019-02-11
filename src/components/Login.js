@@ -4,6 +4,7 @@ import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import { AUTH_TOKEN } from '../constants'
 import { FaInstagram } from 'react-icons/fa'
+
 const LOGIN_MUTATION = gql`
   mutation login($email: String!, $password: String!){
     login(email: $email, password: $password) {
@@ -65,7 +66,7 @@ export default class Login extends Component {
               <input className="login--input" required onChange={this.handleChange} name="username" placeholder="Username" value={this.state.username}></input>
             </Fragment>
           }
-          <input className="login--input" required onChange={this.handleChange} name="password" placeholder="Password" value={this.state.password}></input>
+          <input className="login--input" required onChange={this.handleChange} name="password" type="password" placeholder="Password" value={this.state.password}></input>
           <Mutation mutation={login ? LOGIN_MUTATION : SIGNUP_MUTATION}
            variables={{email, password, fullName, username}}
            onCompleted={data => this.setToken(data)}>
